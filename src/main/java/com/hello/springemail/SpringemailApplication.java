@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
+import javax.mail.MessagingException;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class SpringemailApplication {
 	}
 
 	@EventListener(ApplicationReadyEvent.class)
-	public void sendMail() throws IOException{
+	public void sendMail() throws IOException, MessagingException {
 
 		List<String> emails = readEmail();
 		List<String> messages = readMessage();
@@ -40,7 +41,7 @@ public class SpringemailApplication {
 	}
 
 	public static List<String> readEmail() throws IOException {
-		String file = "/Users/yeonkyu/Desktop/etc/01.sendMail/springemail/email";
+		String file = "./email";
 
 		List<String> emails = new ArrayList<>();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
@@ -51,7 +52,7 @@ public class SpringemailApplication {
 	}
 
 	public static List<String> readMessage() throws IOException {
-		String file = "/Users/yeonkyu/Desktop/etc/01.sendMail/springemail/event";
+		String file = "./eventLog";
 
 		List<String> events = new ArrayList<>();
 

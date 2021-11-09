@@ -15,7 +15,7 @@ public class TestMain {
     }
 
     public static List<String> readEmail() throws IOException {
-        String file = "/Users/yeonkyu/Desktop/etc/01.sendMail/springemail/email";
+        String file = "./email";
 
         List<String> emails = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
@@ -26,7 +26,7 @@ public class TestMain {
     }
 
     public static List<String> readMessage() throws IOException {
-        String file = "/Users/yeonkyu/Desktop/etc/01.sendMail/springemail/event";
+        String file = "./eventLog";
 
         List<String> events = new ArrayList<>();
 
