@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ### Application Property ###
-.gitignore
+/src/main/resources/application.properties
